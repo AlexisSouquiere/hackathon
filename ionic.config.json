@@ -8,7 +8,7 @@
   "proxies": [
     {
       "path": "/search/",
-      "proxyUrl": "http://search.michelin.com/"
+      "proxyUrl": "http://1578fc05.ngrok.io/"
     }
   ]
 }
