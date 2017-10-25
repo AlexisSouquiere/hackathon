@@ -47,12 +47,10 @@ export class HomePage {
     this.speechRecognition.startListening().subscribe(matches => {
       this.matches = matches;
       this.cd.detectChanges();
+
+      this.searchForKeyword("point+restauration+carmes");
     });
     this.isRecording = true;
-
-    if(this.matches.indexOf("horaire") > -1 ) {
-      this.searchForKeyword("point+restauration+carmes");
-    }
 
   }
 

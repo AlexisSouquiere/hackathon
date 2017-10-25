@@ -16,7 +16,7 @@ export class SearchServiceProvider {
   }
 
   searchMichelin(params) {
-    let url = "/search/search?q=" + params + "&client=michelin01&output=xml_no_dtd";
+    let url = "http://1578fc05.ngrok.io/search?q=" + params + "&client=michelin01&output=xml_no_dtd";
     return this.http.get(url).map(res => res.text());
   }
 }
