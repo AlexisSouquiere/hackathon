@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { HttpModule } from "@angular/http";
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { SearchPage} from "../pages/search/search";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -15,24 +17,27 @@ import { SearchServiceProvider } from '../providers/search-service/search-servic
   declarations: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SearchPage
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    ListPage
+    ListPage,
+    SearchPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     SpeechRecognition,
+    SearchServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    SearchServiceProvider
   ]
 })
 export class AppModule {}

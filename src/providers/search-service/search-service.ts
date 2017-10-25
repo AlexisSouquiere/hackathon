@@ -16,9 +16,7 @@ export class SearchServiceProvider {
   }
 
   searchMichelin(params) {
-    let url = "/search/search?q=" + params;
-    let response = this.http.get(url).map(res => res.text());
-
-    return response;
+    let url = "/search/search?q=" + params + "&client=michelin01&output=xml_no_dtd";
+    return this.http.get(url).map(res => res.text());
   }
 }
